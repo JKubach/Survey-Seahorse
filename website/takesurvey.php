@@ -55,12 +55,3 @@ if (empty($code)) {
 
 
 ?>
-<script>
-var slider = document.getElementById("answerSlide");
-var output = document.getElementById("demo");
-output.innerHTML = slider.value;
-
-slider.oninput = function() {
-    output.innerHTML = this.value;
-}
-</script>
