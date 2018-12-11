@@ -5,6 +5,7 @@ error_reporting(E_ALL | E_STRICT);
 session_start();
 include_once 'config.php';
 
+$block = $_SESSION['blocked'];
 $code = mysqli_real_escape_string($connect, $_POST['survey-code']);
 
 if (empty($code)) {
@@ -18,7 +19,10 @@ if (empty($code)) {
     if ($check < 1) {
         header("Location: ../findsurvey.php?find=error");
         exit();
-    } else {
+    } elseif ($block == 50 || $block == 51) {
+        header("Location: res/nope.php");
+        exit();
+    }else {
         $row = mysqli_fetch_assoc($result);
         $_SESSION['sid'] = $row['survey_id'];
         $sid = $row['survey_id'];
@@ -55,3 +59,12 @@ if (empty($code)) {
 
 
 ?>
+<script>
+var slider = document.getElementById("answerSlide");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+    output.innerHTML = this.value;
+}
+</script>

@@ -31,6 +31,7 @@ if (isset($_POST['submit'])) {
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['date'] = $row['registration_date'];
+                    $_SESSION['blocked'] = ord($row['blocked']);
                     header("Location: ../index.php?login=success");
                     exit();
                 }

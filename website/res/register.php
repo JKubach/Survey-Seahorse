@@ -4,7 +4,6 @@ error_reporting(E_ALL | E_STRICT);
 
 if (isset($_POST['submit'])) {
     include_once '../config.php';
-
     $email = mysqli_real_escape_string($connect, $_POST['email']);
     $username = mysqli_real_escape_string($connect, $_POST['username']);
     $password = mysqli_real_escape_string($connect, $_POST['password']);
@@ -39,8 +38,7 @@ if (isset($_POST['submit'])) {
     }
 
 } else {
-    header("Location: ../signup.php");
+    header("Location: ../profile.php");
     exit();
 }
-
 ?>

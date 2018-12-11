@@ -15,3 +15,21 @@ $q = mysqli_fetch_assoc($result);
 <a href="createsurvey.php"> Create Survey </a> <br>
 <a href="findsurvey.php"> Find a Survey </a> <br>
 <a href="logout.php"> Logout </a> <br>
+
+<?php 
+if (isset($_SESSION['uid'])) {
+    $uid = $_SESSION['uid'];
+    $adminsql = "SELECT * FROM user WHERE admin=1 and user_id=$uid;";
+    $result = mysqli_query($connect, $adminsql);
+    $check = mysqli_num_rows($result);
+
+    
+    if ($check < 1) {
+        exit();
+    } else {
+        $_SESSION['admin'] = 1;
+        echo "<a href='controlpanel.php'> Admin Control Panel </a> <br>";
+    }
+}
+
+
