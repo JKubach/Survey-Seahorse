@@ -4,7 +4,7 @@
 
 <input type="text" name="email" placeholder="Email">
 <input type="text" name="username" placeholder="User Name">
-<input type="text" name="password" placeholder="Password">
+<input type="password" name="password" placeholder="Password">
 <button type="submit" name="submit">Sign Up</button>
 
 </form>

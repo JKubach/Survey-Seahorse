@@ -11,8 +11,8 @@ $answers = $_POST['answers'];
 
 for($counter = 0; $counter < sizeof($answers); $counter++)
 {
+    $questionNum = $counter+1;
     $q = $answers[$counter];
-    echo "Answer #".($counter + 1).": ".$answers[$counter]."<br />";
     $sql = "INSERT INTO answer_numeric (user_id, survey_id, question_number, answer)
         VALUES ('$user', '$survey_id', $counter + 1, $q);";
     mysqli_query($connect, $sql) or die(mysqli_error($connect));
@@ -20,7 +20,14 @@ for($counter = 0; $counter < sizeof($answers); $counter++)
     $getsql = "SELECT question_content from question where survey_id=$survey_id and question_number=$counter+1;";
     $result = mysqli_query($connect, $getsql);
     $question = mysqli_fetch_assoc($result);
-    echo "For Question: ", $question['question_content'], ", you answered: ", $answers[$counter], "<br>";
+
+    $getAnswer = "SELECT answer, count(answer) AS num_ans FROM answer_numeric WHERE (survey_id=$survey_id AND question_number=$counter+1) GROUP BY answer ORDER BY num_ans DESC LIMIT 1;";
+    $ansresult = mysqli_query($connect, $getAnswer);
+    $ans = mysqli_fetch_assoc($ansresult); 
+    echo "For Question #", $counter+1, ": ", $question['question_content'], ", you answered: ", $answers[$counter], "<br>";
+    echo "Most people answered: ", $ans['answer'], "<br>";
+    //echo "<a href='query.php?question=$questionNum&sid=$survey_id'> More Details </a> <br> <br>";
+    echo "<a href='script/chart.php?question=$questionNum&sid=$survey_id'> More Details </a> <br> <br>";
 
 }
     echo "<a href='../index.php'> Home </a>";
