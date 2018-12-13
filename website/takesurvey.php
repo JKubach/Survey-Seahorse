@@ -2,20 +2,31 @@
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 
+ini_set('session.cache_limiter','public');
+session_cache_limiter(false);
+
 session_start();
 include_once 'config.php';
-
-$block = $_SESSION['blocked'];
-$code = mysqli_real_escape_string($connect, $_POST['survey-code']);
+$uid = $_SESSION['uid'];
+if (empty($_GET)) {
+    $code = mysqli_real_escape_string($connect, $_POST['survey-code']);
+    $sql = "SELECT * FROM survey WHERE access_code='$code'";
+} else {
+    $code = mysqli_real_escape_string($connect, $_GET['sid']);
+    $sql = "SELECT * FROM survey WHERE survey_id ='$code'";
+}
 
 if (empty($code)) {
     header("Location: ../findsurvey.php?find=error");
     exit();
+} elseif (empty($uid)) {
+        header("Location: login.php?sid=" . $_GET['sid']);
 } else {
-    $sql = "SELECT * FROM survey WHERE access_code='$code'";
+//    $sql = "SELECT * FROM survey WHERE access_code='$code'";
     $result = mysqli_query($connect, $sql);
     $check = mysqli_num_rows($result);
 
+$block = $_SESSION['blocked'];
     if ($check < 1) {
         header("Location: ../findsurvey.php?find=error");
         exit();
@@ -56,15 +67,4 @@ if (empty($code)) {
         echo "</form>";
     }
 }
-
-
 ?>
-<script>
-var slider = document.getElementById("answerSlide");
-var output = document.getElementById("demo");
-output.innerHTML = slider.value;
-
-slider.oninput = function() {
-    output.innerHTML = this.value;
-}
-</script>

@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!empty($_GET)) {
+    $_SESSION['login-sid'] = $_GET['sid'];
+}
 ?>
 <html>
 <h2> Sign In</h2>
