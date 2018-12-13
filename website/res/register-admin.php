@@ -28,7 +28,7 @@ if (isset($_POST['admin'])) {
                 $date = date("Y-m-d H:i:s");
                 $sql = "INSERT INTO user (email, username, password, admin,
                     registration_date) 
-                VALUES ('$email', '$username', '$hashPass', 1, '$date');";
+                VALUES ('$email', '$username', '$hashPass', b'1', '$date');";
 
                 mysqli_query($connect, $sql) or die(mysqli_error($connect));
                 header("Location: ../controlpanel.php?signup=success");
