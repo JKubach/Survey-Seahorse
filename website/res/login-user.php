@@ -1,6 +1,9 @@
 <?php
 
 session_start();
+ini_set('display_errors', 'On');
+error_reporting(E_ALL | E_STRICT);
+
 
 if (isset($_POST['submit'])) {
     include '../config.php';
@@ -9,14 +12,14 @@ if (isset($_POST['submit'])) {
     $password = mysqli_real_escape_string($connect, $_POST['password']);
 
     if (empty($username) || empty($password)) {
-    header("Location: ../index.php?login=error");
-    exit();
-        
+        header("Location: ../index.php?login=error");
+        exit();
+
     } else {
         $sql = "SELECT * FROM user WHERE username='$username'";
         $result = mysqli_query($connect, $sql);
         $check = mysqli_num_rows($result);
-  
+
         if ($check < 1) {
             header("Location: ../index.php?login=error");
             exit();
@@ -32,8 +35,16 @@ if (isset($_POST['submit'])) {
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['date'] = $row['registration_date'];
                     $_SESSION['blocked'] = ord($row['blocked']);
-                    header("Location: ../index.php?login=success");
-                    exit();
+                    $sid = $_SESSION['login-sid'];
+                    if (empty($_SESSION['login-sid'])) {
+                        header("Location: ../index.php?login=success");
+                        exit();
+                    } else {
+                        //unset($_SESSION['login-sid']);
+                        //header("Location: ../takesurvey.php?sid=" . $sid);
+                        header("Location: ../takesurvey.php?sid=" . $sid);
+                        exit();
+                    }
                 }
             }
         }
