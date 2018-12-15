@@ -11,6 +11,10 @@ if (!empty($_GET)) {
 <input type="text" name="username" placeholder="User Name">
 <input type="text" name="password" placeholder="Password">
 <button type="submit" name="submit">Sign In</button>
+    
+<a href = "res/nope.php" target = "_blank">Forgot your password?</a> 
+<br>
+<a href = "signUp.php" target = "_blank">Don't have an account?</a>
 
 </form>
 </html>
