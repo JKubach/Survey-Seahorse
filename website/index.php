@@ -22,6 +22,14 @@ $newUser = mysqli_fetch_assoc($result);
 <meta name="theme-color" content="#ffffff">
 </head>
 
+<link rel = "stylesheet" href= "res/nav.css" />
+<div class= nav>
+    <a href="index.php" target="_blank"> Home </a>
+    <a href="directory.php" target="_blank"> Surveys </a>
+    <a href="profile.php" target="_blank"> My Profile </a>
+</div>
+<br>
+
 <h1> Survey Seahorse </h1>
 <h3> Random Question: <?php echo $q['question_content']; ?> </h3>
 <a href="login.php"> Login </a> <br>
