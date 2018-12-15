@@ -9,6 +9,7 @@ $q = mysqli_fetch_assoc($result);
 $sql = "select * from user order by registration_date desc limit 1;";
 $result = mysqli_query($connect, $sql) or die(mysqli_error($connect));
 $newUser = mysqli_fetch_assoc($result);
+$user = $_SESSION['username'];
 ?>
 <head>
 <title>Survey Seahorse</title>
@@ -25,10 +26,11 @@ $newUser = mysqli_fetch_assoc($result);
 <link rel = "stylesheet" href= "res/nav.css" />
 <div class= nav>
     <a href="index.php" target="_blank"> Home </a>
+    <a href="profile.php" target="_blank"> <?php echo $user; ?>'s Profile </a>
     <a href="directory.php" target="_blank"> Surveys </a>
-    <a href="profile.php" target="_blank"> My Profile </a>
+    <a href="createsurvey.php" target="_blank"> Create a Survey </a>
 </div>
-<br>
+<br><br>
 
 <h1> Survey Seahorse </h1>
 <h3> Random Question: <?php echo $q['question_content']; ?> </h3>
