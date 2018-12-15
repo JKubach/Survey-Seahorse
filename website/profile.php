@@ -9,14 +9,23 @@ $uid = $_SESSION['uid'];
 $date = $_SESSION['date'];
 $block = $_SESSION['blocked'];
 
+$blockStatus;
+
+if($block == 48)
+        $blockStatus = "full access";
+if($block == 49)     
+        $blockStatus = "reduced access";
+if($block == 50)
+        $blockStatus = "you shouldn't even be here";
+
 $sql = "SELECT title FROM survey WHERE survey_id IN (SELECT survey_id FROM answer_numeric WHERE user_id=$uid);";
         $result = mysqli_query($connect, $sql);
         $surveys_taken = mysqli_fetch_assoc($result);
         echo  "Surveys that ", $user, " has taken: ", $surveys_taken['title'], "<br>";
 ?>
 
-    <h1> <?php echo $user; ?> </h1>
-    <h1> <?php echo $email; ?> </h1>
-    <h1> <?php echo $uid; ?> </h1>
-    <h1> <?php echo $date; ?> </h1>
-    <h1> <?php echo $block; ?> </h1>
+    <h2> Username: <?php echo $user; ?> </h2>
+    <h2> Email: <?php echo $email; ?> </h2>
+    <h2> UserID: <?php echo $uid; ?> </h2>
+    <h2> Todays Date: <?php echo $date; ?> </h2>
+    <h2> Blovked Status: <?php echo $block; ?> </h2>
