@@ -9,7 +9,7 @@ $uid = $_SESSION['uid'];
 $date = $_SESSION['date'];
 $block = $_SESSION['blocked'];
 
-$blockStatus;
+$blockStatus = "";
 
 if($block == 48)
         $blockStatus = "full access";
@@ -36,5 +36,5 @@ $sql = "SELECT title FROM survey WHERE survey_id IN (SELECT survey_id FROM answe
     <h2> Username: <?php echo $user; ?> </h2>
     <h2> Email: <?php echo $email; ?> </h2>
     <h2> UserID: <?php echo $uid; ?> </h2>
-    <h2> Todays Date: <?php echo $date; ?> </h2>
-    <h2> Blovked Status: <?php echo $block; ?> </h2>
+    <h2> User Registration Date: <?php echo $date; ?> </h2>
+    <h2> Blocked Status: <?php echo $block, ": ", $blockStatus; ?> </h2>
