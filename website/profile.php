@@ -24,6 +24,15 @@ $sql = "SELECT title FROM survey WHERE survey_id IN (SELECT survey_id FROM answe
         echo  "Surveys that ", $user, " has taken: ", $surveys_taken['title'], "<br>";
 ?>
 
+<link rel = "stylesheet" href= "res/nav.css">
+<div class= nav>
+    <a href="index.php" target="_blank"> Home </a>
+    <a href="profile.php" target="_blank"> <?php echo $user; ?>'s Profile </a>
+    <a href="directory.php" target="_blank"> Surveys </a>
+    <a href="createsurvey.php" target="_blank"> Create a Survey </a>
+</div>
+<br><br>
+
     <h2> Username: <?php echo $user; ?> </h2>
     <h2> Email: <?php echo $email; ?> </h2>
     <h2> UserID: <?php echo $uid; ?> </h2>
