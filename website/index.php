@@ -23,7 +23,7 @@ $newUser = mysqli_fetch_assoc($result);
 <meta name="theme-color" content="#ffffff">
 </head>
 
-<?php include 'navbar.php';?>
+<?php include 'res/navbar.php';?>
 
 <h1> Survey Seahorse </h1>
 <h3> Random Question: <?php echo $q['question_content']; ?> </h3>
