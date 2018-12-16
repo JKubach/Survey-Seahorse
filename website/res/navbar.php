@@ -40,7 +40,6 @@ if (isset($_SESSION['username'])) {
         <a href="directory.php" target="_blank"> Surveys </a>
         <a href="createsurvey.php" target="_blank"> Create a Survey </a>
         <a href="profile.php" target="_blank"> <?php echo $user; ?>'s Profile </a>
-        <b href="profile.php" target="_blank"> Find a survey </b>
     </div>
     <br><br>
 </div>
