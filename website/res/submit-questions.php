@@ -18,7 +18,8 @@ include_once '../config.php';
                 VALUES ('$survey_id', $counter + 1, '$q');";
         mysqli_query($connect, $sql) or die(mysqli_error($connect));
 
-	}
+    }
+        unset($_SESSION["questions"]);
         header("Location: ../success.php");
         exit();
 ?>
