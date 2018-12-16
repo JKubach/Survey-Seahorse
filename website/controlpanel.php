@@ -6,6 +6,7 @@ if (!isset($_SESSION['admin'])) {
     exit();
 } else {
     $user = $_SESSION['username'];
+    include 'res/navbar.php';
 
     echo "<p> Hello, ", $user, " what would you like to do? <br>";
 }
