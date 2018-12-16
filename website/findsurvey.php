@@ -1,5 +1,6 @@
 <?php session_start();
 include_once 'config.php';
+include 'res/navbar.php';
 $sql = "SELECT access_code FROM survey ORDER BY RAND() LIMIT 1;";
 $result = mysqli_query($connect, $sql);
 $rand_code = mysqli_fetch_assoc($result);
