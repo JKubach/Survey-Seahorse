@@ -2,6 +2,7 @@
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 include_once 'config.php';
+include 'res/navbar.php';
 
 $sql = "SELECT * FROM survey;";
 $result = mysqli_query($connect, $sql);
