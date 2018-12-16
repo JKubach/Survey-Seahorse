@@ -7,6 +7,7 @@ session_cache_limiter(false);
 
 session_start();
 include_once 'config.php';
+include 'res/navbar.php';
 $uid = $_SESSION['uid'];
 if (empty($_GET)) {
     $code = mysqli_real_escape_string($connect, $_POST['survey-code']);
