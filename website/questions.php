@@ -1,6 +1,7 @@
 <p> Enter the questions for your survey </p>
 <?php
 session_start();
+include 'res/navbar.php';
 
 if (isset($_SESSION['questions'])) {
     $questions = $_SESSION['questions'];
