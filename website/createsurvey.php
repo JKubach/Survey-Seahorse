@@ -1,3 +1,4 @@
+<? php include 'res/navbar.php';?>
 <html>
 <h2> Create A New Survey </h2>
 <form class="create-survey-form" action="res/new-survey.php" method="POST">
