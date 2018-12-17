@@ -39,7 +39,7 @@ if (isset($_SESSION['username'])) {
         <a href="index.php" target=""> Home </a>
         <a href="directory.php" target=""> Surveys </a>
         <a href="createsurvey.php" target=""> Create a Survey </a>
-        <a href="profile.php" target=""> <?php echo $user; ?>'s Profile </a>
+        <a href="profile.php" target=""> <?php echo $profile; ?> </a>
     </div>
     <br><br>
 </div>
