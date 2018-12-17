@@ -1,87 +1,53 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 
-body {
-    background: #fff;
-    padding: 0px;
-    margin: 0px;
-    font-family: 'Oswald', sans-serif;
+/*index page*/
+html {
+    background-color: rgb(3,83,136);
     color: white;
-    font-size: 16px;
-    background:  url(ocean.jpg) fixed 50% 50%;
-    background-color: rgb(66,173, 244);
-    background-position: left;
-    background-size: cover;
-  }
-  .box_title{
-    font-family: 'Raleway', sans-serif;
-    color: #F9F3F4;
-    font-size: 250%;
-    margin-bottom: 50px;
-    max-width: 500px;
-    margin: 0 auto;
+}
+.panel {
+    height:100%;
+}
+.panel h1{
     text-align: center;
-  }
-  
-  input, button {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-  }
-  
-  .main-div, .loggedin-div {
-    width: 20%;
-    margin: 0px auto;
-    margin-top: 150px;
-    padding: 20px;
-    display: none;
-    background: rgba(0,0,0,.8);
-    padding: 40px;
-    border-radius: 10px; /*Rounded edges*/
-  }
-  
-  .main-div input {
+    font-family: 'Oswald', sans-serif;
+    font-size: 500%;
+}
+.panel h3 {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 200%;
+}
+.seahorse_pic {
     display: block;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background: #fff;
-    padding: 15px;
-    outline: none;
-    width: 100%;
-    margin-bottom: 20px;
-    transition: 0.3s;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-  }
-  
-  .main-div input:focus {
-    border: 1px solid #777;
-  }
-  
-  .main-div button, .loggedin-div button {
-    background: #5d8ffc;
-    color: #fff;
-    border: 1px solid #5d8ffc;
-    border-radius: 5px;
-    padding: 15px;
-    display: block;
-    width: 100%;
-    transition: 0.3s;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-  }
-  
-  .main-div button:hover, .loggedin-div button:hover {
-    background: #fff;
-    color: #5d8ffc;
-    border: 1px solid #5d8ffc;
-    cursor: pointer;
-  }
-
-  .img{
     margin-left: auto;
-		margin-right: inherit;
-		/*transform: translateX(20%);*/
-		margin-bottom: 50px;
-		animation-delay: 5;
-		animation: ease-in;  
-  }
+    margin-right: auto;
+    padding: 10px;
+    padding-bottom: 30px;
+}
+.index-grid-panel {
+    display: grid;
+    grid-auto-rows: 1;
+}
+.index-grid-panel a {
+    font-family: 'Raleway', sans-serif;
+    background-color: rgb(118, 193, 243);
+    color:rgb(3,83,136);
+    border: none;
+    /*padding: 10px;*/
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    /*display: inline-block;*/
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.index-grid-panel a:hover {
+    background:white;
+}
+a.off:hover {
+    background:red;
+    color: white;
+}
