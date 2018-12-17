@@ -12,7 +12,7 @@ if (isset($_SESSION['username'])) {
     border-radius: 25px;
     margin: 0;
     padding: 10px;
-    background-color: lightblue;
+    background-color: #40e0d0;
 }
 
 .nav {
@@ -26,15 +26,14 @@ if (isset($_SESSION['username'])) {
     float: left;
     font-size: 16px;
     color: #000;
-    background-color: white;
+    background-color: #40e0d0;
     text-align: center;
     padding: 10px 16px;
     text-decoration: none;
 }
 
 .nav a:hover, .drop:hover .dropbtn {
-    background-color: rgb(3,83,136);
-    color: white;
+    background-color: #31b6a8;
 }
 </style>
 <div class=navbox>
