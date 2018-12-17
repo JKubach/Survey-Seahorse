@@ -6,5 +6,6 @@ unset($_SESSION["username"]);
 unset($_SESSION["date"]);
 unset($_SESSION['admin']);
 unset($_SESSION['blocked']);
+unset($_SESSION['login-sid']);
 header("Location: index.php");
 ?>
