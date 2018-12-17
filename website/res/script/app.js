@@ -1,7 +1,7 @@
 $(document).ready(function(){
         var queryValues = location.search;
     $.ajax({
-        url: "https://www.surveyseahorse.com/res/query.php" + queryValues,
+        url: "https://surveyseahorse.com/res/query.php" + queryValues,
         method: "GET",
         success: function(data) {
             console.log(data);
