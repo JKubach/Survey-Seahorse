@@ -9,6 +9,7 @@ if (isset($_SESSION['username'])) {
 
 <style>
 .navbox{
+    border-radius: 25px;
     margin: 0;
     padding: 10px;
     background-color: lightblue;
@@ -21,6 +22,7 @@ if (isset($_SESSION['username'])) {
 }
 
 .nav a {
+    border-radius: 25px;
     float: left;
     font-size: 16px;
     color: #000;
