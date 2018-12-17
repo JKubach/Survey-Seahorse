@@ -36,10 +36,10 @@ if (isset($_SESSION['username'])) {
 </style>
 <div class=navbox>
     <div class= nav>
-        <a href="index.php" target="_blank"> Home </a>
-        <a href="directory.php" target="_blank"> Surveys </a>
-        <a href="createsurvey.php" target="_blank"> Create a Survey </a>
-        <a href="profile.php" target="_blank"> <?php echo $user; ?>'s Profile </a>
+        <a href="index.php" target=""> Home </a>
+        <a href="directory.php" target=""> Surveys </a>
+        <a href="createsurvey.php" target=""> Create a Survey </a>
+        <a href="profile.php" target=""> <?php echo $user; ?>'s Profile </a>
     </div>
     <br><br>
 </div>
