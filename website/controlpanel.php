@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+ini_set('display_errors', 'On');
+error_reporting(E_ALL | E_STRICT);
+
 include_once 'config.php';
 if (!isset($_SESSION['admin'])) {
     header("Location: res/nope.php");
@@ -29,6 +33,12 @@ if (!isset($_SESSION['admin'])) {
     <input type='text' name='username' placeholder='User Name'> <br>
     <input type='text' name='password' placeholder='Password'> <br>
     <button type='submit' name='admin' > Create New Admin Account</button>
+</form>
+
+<form class="banner-message" action="res/admin-message.php" method="POST">
+    <input type='text' name='message' placeholder='New Message'> <br>
+    <button type='submit' name='admin' > New Banner Message </button>
+    <button type='submit' name='remove' > Remove Current Banner Message </button>
 </form>
 
 <a href="index.php"> Home </a> <br>
