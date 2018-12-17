@@ -2,6 +2,8 @@
 <?php
 session_start();
 include_once 'config.php';
+if($_SESSION['username'] == null)
+        header("Location: login.php");
 
 $user = $_SESSION['username'];
 $email = $_SESSION['email'];
