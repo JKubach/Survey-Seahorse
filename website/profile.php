@@ -32,4 +32,4 @@ $sql = "SELECT title FROM survey WHERE survey_id IN (SELECT survey_id FROM answe
     <h2> Email: <?php echo $email; ?> </h2>
     <h2> UserID: <?php echo $uid; ?> </h2>
     <h2> User Registration Date: <?php echo $date; ?> </h2>
-    <h2> Blocked Status: <?php echo $block, ": ", $blockStatus; ?> </h2>
+    <h2> Blocked Status: <?php echo $blockStatus; ?> </h2>
