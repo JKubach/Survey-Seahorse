@@ -1,8 +1,12 @@
+<html>
 <?php
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 include_once 'config.php';
 include 'res/navbar.php';
+
+echo '<link rel="stylesheet" href="res/style.css">';
+echo  '<div class="survey-directory">';
 
 $sql = "SELECT * FROM survey;";
 $result = mysqli_query($connect, $sql);
@@ -21,3 +25,5 @@ while ($row = mysqli_fetch_array($result)) {
 }
 exit();
 ?>
+</div>
+</html>

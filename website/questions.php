@@ -1,13 +1,17 @@
-<p> Enter the questions for your survey </p>
+<html>
 <?php
 session_start();
 include 'res/navbar.php';
 
+echo '<link rel="stylesheet" href="res/style.css">';
+echo '<h2> Enter the questions for your survey </h2>';
+
 if (isset($_SESSION['questions'])) {
     $questions = $_SESSION['questions'];
-    echo "<form method = 'POST' action = 'res/submit-questions.php'>";
+    $questionNum = $counter + 1;
+    echo "<form class='question-form' method = 'POST' action = 'res/submit-questions.php'>";
     for($counter = 0; $counter < $questions; $counter++) {
-        echo "<input type = 'text' name = 'questions[]' class = 'questions'/><br/>";
+        echo "<input type = 'text' name = 'questions[]' class = 'questions' placeholder='Question $questionNum' /><br/>";
     }
     echo "<input type = 'submit' value = 'SEND'/>";
     echo "</form>";
@@ -16,3 +20,4 @@ if (isset($_SESSION['questions'])) {
         exit();
 }
 ?>
+</html>

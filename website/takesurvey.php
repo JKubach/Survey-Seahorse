@@ -4,11 +4,13 @@ error_reporting(E_ALL | E_STRICT);
 
 ini_set('session.cache_limiter','public');
 session_cache_limiter(false);
-
 session_start();
+
 include_once 'config.php';
 include 'res/navbar.php';
+
 $uid = $_SESSION['uid'];
+
 if (empty($_GET)) {
     $code = mysqli_real_escape_string($connect, $_POST['survey-code']);
     $sql = "SELECT * FROM survey WHERE access_code='$code'";
@@ -28,6 +30,7 @@ if (empty($code)) {
     $check = mysqli_num_rows($result);
 
 $block = $_SESSION['blocked'];
+
     if ($check < 1) {
         header("Location: ../findsurvey.php?find=error");
         exit();
@@ -35,6 +38,8 @@ $block = $_SESSION['blocked'];
         header("Location: res/nope.php");
         exit();
     }else {
+        echo '<link rel="stylesheet" href="res/style.css">';
+        echo  '<div class="take-survey">';
         $row = mysqli_fetch_assoc($result);
         $_SESSION['sid'] = $row['survey_id'];
         $sid = $row['survey_id'];

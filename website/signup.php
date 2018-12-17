@@ -1,4 +1,5 @@
 <html>
+<link rel="stylesheet" href="res/style.css">
 <form class="signup-form" action="res/register.php" method="POST">
   <h2> Signup </h2>
   <input type="text" name="email" placeholder="Email">

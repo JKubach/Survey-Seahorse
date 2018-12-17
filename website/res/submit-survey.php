@@ -11,6 +11,9 @@ $user = $_SESSION['uid'];
 $survey_id = $_SESSION['sid'];
 $answers = $_POST['answers'];
 
+echo '<link rel="stylesheet" href="style.css">';
+echo  '<div class="submit-survey">';
+
 for($counter = 0; $counter < sizeof($answers); $counter++)
 {
     $questionNum = $counter+1;

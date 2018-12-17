@@ -11,7 +11,7 @@ if (!empty($_GET)) {
 <form class="signin-form" action="res/login-user.php" method="POST">
     <h2> Sign In</h2>
     <input type="text" name="username" placeholder="User Name">
-    <input type="text" name="password" placeholder="Password">
+    <input type="password" name="password" placeholder="Password">
     <button type="submit" name="submit">Sign In</button> <br>
     <a href = "passReset.php" >Forgot your password?</a> <br>
     <a href = "signup.php" >Don't have an account?</a>

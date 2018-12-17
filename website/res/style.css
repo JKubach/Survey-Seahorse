@@ -114,6 +114,16 @@ form a{
     padding: 20px;
 }
 
+/* profile page */
+.profile {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: #9dc3ee; 
+    padding: 20px;
+}
+
 .find-survey-form {
     position: absolute;
     top: 50%;
@@ -123,4 +133,54 @@ form a{
     padding: 20px;
     font-family: 'Raleway', sans-serif;
     color: rgb(3,83,136);
+}
+
+/* create survey */
+.create-survey-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: #9dc3ee; 
+    padding: 20px;
+}
+
+/* create questions */
+.question-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: #9dc3ee; 
+    padding: 20px;
+}
+
+/* take survey */
+.take-survey {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: #9dc3ee; 
+    padding: 20px;
+}
+
+/* submit survey */
+.submit-survey {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: #9dc3ee; 
+    padding: 20px;
+}
+
+/* survey directory */
+.survey-directory {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: #9dc3ee; 
+    padding: 20px;
 }
