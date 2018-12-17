@@ -13,7 +13,7 @@ if (!empty($_GET)) {
     <input type="text" name="username" placeholder="User Name">
     <input type="text" name="password" placeholder="Password">
     <button type="submit" name="submit">Sign In</button> <br>
-    <a href = "passReset.php" target = "_blank">Forgot your password?</a> <br>
-    <a href = "signup.php" target = "_blank">Don't have an account?</a>
+    <a href = "passReset.php" >Forgot your password?</a> <br>
+    <a href = "signup.php" >Don't have an account?</a>
 </form>
 </html>
