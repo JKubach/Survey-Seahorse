@@ -24,8 +24,13 @@ $newUser = mysqli_fetch_assoc($result);
 <link rel="stylesheet" href="res/style.css">
 </head>
 
-<?php include 'res/navbar.php';?>
-
+<?php 
+include 'res/navbar.php';
+include 'res/txt/msg.php';
+if (isset($message)) {
+    echo "<center ><h3> Message from the Admins: ",  $message, "</h3> </center>";
+}
+?>
 <div class="panel">
     <h1> Survey Seahorse </h1>
     <h3> Random Question: <?php echo $q['question_content']; ?>
@@ -40,8 +45,6 @@ $newUser = mysqli_fetch_assoc($result);
     <a href="createsurvey.php"> Create Survey </a> <br>-->
     <a href="findsurvey.php"> Find a Survey </a>
     <a href="directory.php"> Survey Directory</a>
-    <a class="off" href="logout.php"> Logout </a>
-</div>
 
 <?php 
 if (isset($_SESSION['uid'])) {
@@ -50,7 +53,7 @@ if (isset($_SESSION['uid'])) {
     $result = mysqli_query($connect, $adminsql);
     $check = mysqli_num_rows($result);
 
-    
+
     if ($check < 1) {
         exit();
     } else {
@@ -59,6 +62,6 @@ if (isset($_SESSION['uid'])) {
     }
 }
 ?>
+    <a class="off" href="logout.php"> Logout </a>
 
-
-
+</div>
