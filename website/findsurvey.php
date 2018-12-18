@@ -4,7 +4,9 @@ include 'res/navbar.php';
 $sql = "SELECT access_code FROM survey ORDER BY RAND() LIMIT 1;";
 $result = mysqli_query($connect, $sql);
 $rand_code = mysqli_fetch_assoc($result);
-?>
+if(!isset($_SESSION['uid'])){
+            header("location: login.php?user=notloggedin");
+        }?>
 <link rel="stylesheet" href="res/style.css">
 
 <form class ="find-survey-form" action="takesurvey.php" method="POST">
