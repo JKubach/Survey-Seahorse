@@ -5,6 +5,11 @@ if (isset($_SESSION['username'])) {
     } else {
     $profile = "Profile";
 }
+
+$sql = "SELECT survey_id FROM survey ORDER BY RAND() LIMIT 1;";
+$result = mysqli_query($connect, $sql) or die(mysqli_error($connect));
+$feelinLucky = mysqli_fetch_assoc($result);
+$luckyUrl = "takesurvey.php?sid=" . $feelinLucky['survey_id'];
 ?>
 
 <style>
@@ -42,6 +47,7 @@ if (isset($_SESSION['username'])) {
         <a href="directory.php" target=""> Surveys </a>
         <a href="createsurvey.php" target=""> Create a Survey </a>
         <a href="profile.php" target=""> <?php echo $profile; ?> </a>
+        <a href="<?php echo $luckyUrl?>" target=""> Feeling Lucky? </a>
     </div>
     <br><br>
 </div>
