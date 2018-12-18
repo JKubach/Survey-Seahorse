@@ -1,4 +1,10 @@
 <?php include 'res/navbar.php';?>
+
+session_start();
+    if(!isset($_SESSION['uid'])){
+        header("location: login.php?user=notloggedin");
+    }
+    ?>
 <html>
 <!-- <link rel="stylesheet" href="res/style.css"> -->
 <h2> Create A New Survey </h2>
@@ -24,10 +30,5 @@
 
 <button type="submit" name="submit">Create Survey</button>
  
- <?php session_start();
-    if(!isset($_SESSION['uid'])){
-        header("location: login.php?user=notloggedin");
-    }
-    ?>
 </form>
 </html>
