@@ -23,6 +23,11 @@
 <input type="radio" name="once" value="1"> No <br>
 
 <button type="submit" name="submit">Create Survey</button>
-
+ 
+ <?php session_start();
+    if(!isset($_SESSION['uid'])){
+        header("location: login.php?user=notloggedin");
+    }
+    ?>
 </form>
 </html>
