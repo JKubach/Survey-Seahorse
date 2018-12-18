@@ -12,7 +12,7 @@ $sql = "SELECT COUNT(*) FROM survey;";
 $result = mysqli_query($connect, $sql);
 $r = mysqli_fetch_row($result);
 $number_rows = $r[0];
-$rows_page = 5;
+$rows_page = 3;
 $total_pages = ceil($number_rows / $rows_page);
 
 if (isset($_GET['page']) && is_numeric($_GET['page'])) {
