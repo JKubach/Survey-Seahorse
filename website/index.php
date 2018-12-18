@@ -55,13 +55,15 @@ if (isset($_SESSION['uid'])) {
 
 
     if ($check < 1) {
+        echo "<a class='off' href='logout.php'> Logout </a>";
         exit();
     } else {
         $_SESSION['admin'] = 1;
         echo "<a href='controlpanel.php'> Admin Control Panel </a> <br>";
+        echo "<a class='off' href='logout.php'> Logout </a>";
     }
 }
+exit();
 ?>
-    <a class="off" href="logout.php"> Logout </a>
 
 </div>
