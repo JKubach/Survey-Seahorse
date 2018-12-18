@@ -1,4 +1,9 @@
 <?php
+ session_start();
+        if(!isset($_SESSION['uid'])){
+            header("location: login.php?user=notloggedin");
+        }
+
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 
