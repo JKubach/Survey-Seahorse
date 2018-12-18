@@ -1,4 +1,6 @@
 <?php
+include_once 'config.php';
+
 if (isset($_SESSION['username'])) {
     $user = $_SESSION['username'];
     $profile = $user . "'s Profile";
