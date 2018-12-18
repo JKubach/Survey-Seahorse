@@ -1,4 +1,4 @@
-<?php include 'res/navbar.php';?>
+<?php include 'res/navbar.php';
 
 session_start();
     if(!isset($_SESSION['uid'])){
