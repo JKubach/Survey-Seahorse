@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
             type, number_questions, creation_date, expiration_date, 
             one_shot)
             VALUES ($uid, '$code', '$title', '$user', '$description', 
-            $type, '$number_questions', '$date', '$sql_expire', 
+            b'$type', '$number_questions', '$date', '$sql_expire', 
             $one_shot);";
 
         mysqli_query($connect, $sql) or die(mysqli_error($connect));
@@ -52,5 +52,4 @@ if (isset($_POST['submit'])) {
         exit();
     }
 }
-
 ?>
