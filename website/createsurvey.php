@@ -17,7 +17,7 @@ session_start();
 <p> Answer Type </p>
  <input type="radio" name="type" value="00"> Numeric (1 - 10) <br>
 <input type="radio" name="type" value="01"> Yes / No <br>
-<input type="radio" name="type" value="10"> Text <br>
+<!-- <input type="radio" name="type" value="10"> Text <br> -->
 
 <p> Number of Questions </p>
 <input type="text" name="number" placeholder="5"> <br>
