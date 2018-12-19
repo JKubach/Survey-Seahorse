@@ -18,3 +18,4 @@ if(!isset($_SESSION['uid'])){
 echo "<p> Looking for a survey? Try ", $rand_code['access_code'], "</p>"; 
 
 ?>
+ 
