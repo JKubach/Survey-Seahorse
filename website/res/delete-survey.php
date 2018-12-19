@@ -19,6 +19,7 @@ if (isset($_POST['delete-survey'])) {
         $row = mysqli_fetch_assoc($result);
         $sid = $row['survey_id'];
         $deleteAnswers ="DELETE FROM answer_numeric WHERE survey_id=$sid;";
+        $deleteAnswers ="DELETE FROM answer_bool WHERE survey_id=$sid;";
         $deleteQuestions ="DELETE FROM question WHERE survey_id=$sid;";
         $deleteSurvey ="DELETE FROM survey WHERE survey_id=$sid;";
 
