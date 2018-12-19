@@ -21,7 +21,7 @@ for($counter = 0; $counter < sizeof($questions); $counter++)
 }
 
 for($counter = 0; $counter < sizeof($questions); $counter++){
-    $q = $questions[$counter];
+    $q = mysqli_real_escape_string($connect, $questions[$counter]);
     echo "Question #".($counter + 1).": ".$questions[$counter]."<br />";
     $sql = "INSERT INTO question (survey_id, question_number, question_content)
         VALUES ('$survey_id', $counter + 1, '$q');";
