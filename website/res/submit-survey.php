@@ -20,7 +20,7 @@ if (isset($_POST['answers'])) {
         for($counter = 0; $counter < sizeof($answers); $counter++) {
             $questionNum = $counter+1;
             $q = $answers[$counter];
-            if ($_SESSION['expired'] != 1) {
+            if ($_SESSION['expired'] != 1 && $_SESSION['taken'] != 1) {
                 $sql = "INSERT INTO answer_numeric (user_id, survey_id, question_number, answer)
                     VALUES ('$user', '$survey_id', $counter + 1, $q);";
                 mysqli_query($connect, $sql) or die(mysqli_error($connect));
@@ -46,7 +46,7 @@ if (isset($_POST['answers'])) {
             $type = 49;
             $questionNum = $counter+1;
             $q = $answers[$counter];
-            if ($_SESSION['expired'] != 1) {
+            if ($_SESSION['expired'] != 1 && $_SESSION['taken'] != 1) {
                 $sql = "INSERT INTO answer_bool (user_id, survey_id, question_number, answer)
                     VALUES ('$user', '$survey_id', $counter + 1, '$q');";
                 mysqli_query($connect, $sql) or die(mysqli_error($connect));
@@ -73,7 +73,7 @@ if (isset($_POST['answers'])) {
         {
             $questionNum = $counter+1;
             $q = $answers[$counter];
-            if ($_SESSION['expired'] != 1) {
+            if ($_SESSION['expired'] != 1 && $_SESSION['taken'] != 1) {
                 $sql = "INSERT INTO answer_text (user_id, survey_id, question_number, answer)
                     VALUES ('$user', '$survey_id', $counter + 1, $q);";
                 mysqli_query($connect, $sql) or die(mysqli_error($connect));

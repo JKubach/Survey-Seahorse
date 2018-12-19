@@ -66,8 +66,11 @@ if (empty($code)) {
             $result = mysqli_query($connect, $sql);
             $num_rows = mysqli_num_rows($result);
             if ($num_rows > 0) {
-                header("Location: res/nope.php");
-                exit();
+                $_SESSION['taken'] = 1;
+        echo "<h3> NOTICE: Survey already taken. Your answers will not be counted. </h3>";
+            } else {
+                $_SESSION['taken'] = 0;
+
             }
         }
 
