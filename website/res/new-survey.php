@@ -20,6 +20,9 @@ if (isset($_POST['submit'])) {
     if (empty($title)) {
         header("Location: ../createsurvey.php?item=empty");
         exit();
+    } elseif (date("Y-m-d", strtotime($expire_date)) <= date("Y-m-d")) {
+        header("Location: ../createsurvey.php?date=expired");
+        exit();
     } else {
         $adj_file = file("txt/adjectives.txt");
         $adj_name = $adj_file[array_rand($adj_file)];
@@ -35,7 +38,7 @@ if (isset($_POST['submit'])) {
             one_shot)
             VALUES ($uid, '$code', '$title', '$user', '$description', 
             b'$type', '$number_questions', '$date', '$sql_expire', 
-            $one_shot);";
+            b'$one_shot');";
 
         mysqli_query($connect, $sql) or die(mysqli_error($connect));
 
