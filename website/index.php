@@ -45,6 +45,7 @@ if (isset($message)) {
     <a href="createsurvey.php"> Create Survey </a> <br>-->
     <a href="findsurvey.php"> Find a Survey </a>
     <a href="directory.php"> Survey Directory</a>
+    <a href="archive.php"> Survey Archive</a>
 
 <?php 
 if (isset($_SESSION['uid'])) {

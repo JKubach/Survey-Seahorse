@@ -10,7 +10,7 @@ echo '<link rel="stylesheet" href="res/style.css">';
 echo  '<div class="survey-directory">';
 
 $date = date("Y-m-d");
-$sql = "SELECT COUNT(*) FROM survey WHERE expiration_date >= '$date';";
+$sql = "SELECT COUNT(*) FROM survey WHERE expiration_date < '$date';";
 $result = mysqli_query($connect, $sql);
 $r = mysqli_fetch_row($result);
 $number_rows = $r[0];
@@ -24,7 +24,7 @@ if (isset($_GET['page']) && is_numeric($_GET['page'])) {
 }
 
 $offset = ($page - 1) * $rows_page;
-$sql = "SELECT * FROM survey WHERE expiration_date >= '$date' LIMIT $offset, $rows_page;";
+$sql = "SELECT * FROM survey WHERE expiration_date < '$date' LIMIT $offset, $rows_page;";
 $result = mysqli_query($connect, $sql);
 
 while ($row = mysqli_fetch_assoc($result)) {
