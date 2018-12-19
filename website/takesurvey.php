@@ -51,7 +51,9 @@ if (empty($code)) {
         $title = $row['title'];
         $number_questions = $row['number_questions'];
         $type = ord($row['type']);
+        $expire_date = $row['expiration_date'];
         $one_shot = ord($row['one_shot']);
+        
 
         if ($one_shot == 49) {
             if ($type == 48) {
@@ -68,6 +70,14 @@ if (empty($code)) {
                 exit();
             }
         }
+
+     if ($expire_date < date("Y-m-d")) {
+        $_SESSION['expired'] = 1;
+        echo "<h3> NOTICE: This survey is expired. Your answers will not be counted. </h3>";
+     } else {
+        $_SESSION['expired'] = 0;
+     }
+
 
         echo "<form method = 'POST' action = 'res/submit-survey.php'>";
         echo  "<h1> $title </h1> <br>";
