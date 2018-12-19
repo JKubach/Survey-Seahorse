@@ -6,6 +6,7 @@ $result = mysqli_query($connect, $sql);
 $rand_code = mysqli_fetch_assoc($result);
 if(!isset($_SESSION['uid'])){
             header("location: login.php?user=notloggedin");
+            exit;
         }?>
 <link rel="stylesheet" href="res/style.css">
 
