@@ -51,7 +51,23 @@ if (empty($code)) {
         $title = $row['title'];
         $number_questions = $row['number_questions'];
         $type = ord($row['type']);
-        echo $type;
+        $one_shot = ord($row['one_shot']);
+
+        if ($one_shot == 49) {
+            if ($type == 48) {
+                $sql = "SELECT user_id FROM answer_numeric WHERE user_id=$uid AND survey_id=$sid;";
+            } elseif ($type == 49) {
+                $sql = "SELECT user_id FROM answer_bool WHERE user_id=$uid AND survey_id=$sid;";
+            } elseif ($type == 50) {
+                $sql = "SELECT user_id FROM answer_text WHERE user_id=$uid AND survey_id=$sid;";
+            }
+            $result = mysqli_query($connect, $sql);
+            $num_rows = mysqli_num_rows($result);
+            if ($num_rows > 0) {
+                header("Location: res/nope.php");
+                exit();
+            }
+        }
 
         echo "<form method = 'POST' action = 'res/submit-survey.php'>";
         echo  "<h1> $title </h1> <br>";
@@ -76,7 +92,7 @@ if (empty($code)) {
                     </select> ";
                 echo "<p> <span id='demo'</span> </p>";
             }
-        echo "<button name ='numeric' type = 'submit' value = 'Submit'/>";
+            echo "<button name ='numeric' type = 'submit' value = 'Submit'/>";
         } elseif ($type == 49) {
             for($counter = 0; $counter < $number_questions; $counter++) {
                 $sql = "SELECT question_content FROM question WHERE survey_id=$sid and question_number=$counter+1;";
@@ -89,7 +105,7 @@ if (empty($code)) {
                     </select> ";
                 echo "<p> <span id='demo'</span> </p>";
             }
-        echo "<button name ='bool' type = 'submit' value = 'Submit'/>";
+            echo "<button name ='bool' type = 'submit' value = 'Submit'/>";
         } elseif ($type == 50) {
             for($counter = 0; $counter < $number_questions; $counter++) {
                 $sql = "SELECT question_content FROM question WHERE survey_id=$sid and question_number=$counter+1;";
@@ -101,7 +117,7 @@ if (empty($code)) {
                     </form> ";
                 echo "<p> <span id='demo'</span> </p>";
             }
-        echo "<button name ='text' type = 'submit' value = 'Submit'/>";
+            echo "<button name ='text' type = 'submit' value = 'Submit'/>";
         }
         echo "</form>";
     }
