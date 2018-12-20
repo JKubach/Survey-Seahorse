@@ -6,9 +6,10 @@ $code = $_SESSION['code'];
 $title = $_SESSION['title'];
 $qr = 'res/qrgen.php?sid=' . $sid;
 ?>
+<link rel="stylesheet" href="res/style.css">
 <h1> Success </h1>
 <?php 
-echo $title, " has been created.";
+echo $title, " has been created. ";
 echo "Use access code ", $code;
 echo "<a href='$qr'> QR Code </a>";
 unset($_SESSION['sid']);
