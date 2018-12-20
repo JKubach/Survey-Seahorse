@@ -28,7 +28,7 @@ html {
 }
 .index-grid-panel {
     display: grid;
-    grid-auto-rows: 1;
+    grid-auto-rows: auto;
 }
 .index-grid-panel a {
     font-family: 'Raleway', sans-serif;
