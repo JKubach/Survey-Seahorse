@@ -52,8 +52,48 @@ a.off:hover {
     color: white;
 }
 
+/*Create Survey Page*/
+div.cpanel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: white;
+    padding: 20px;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(3,83,136);
+}
+
+/*Create Survey Page*/
+form.create-survey-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-35%);
+}
+
+input.radio {
+    height: 25px;
+    width: 25px;
+}
+
+p.create {
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+}
+
 /*sign in page*/
 .signin-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: white;
+    padding: 20px;
+}
+
+/*password reset page*/
+.pass-reset {
     position: absolute;
     top: 50%;
     left: 50%;
