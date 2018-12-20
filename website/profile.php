@@ -35,9 +35,9 @@ echo  "<h2> Blocked Status: ' $blockStatus' </h2>";
 $sql = "SELECT title FROM survey WHERE survey_id IN (SELECT survey_id FROM answer_numeric WHERE user_id=$uid) ORDER BY RAND() LIMIT 3;";
 $result = mysqli_query($connect, $sql);
 
-echo "Recent surveys that ", $user, " has taken: ";
+echo "Recent surveys that ", $user, " has taken: <br>";
 while ($surveys_taken = mysqli_fetch_assoc($result)) {
-    echo $surveys_taken['title'], " ";
+    echo $surveys_taken['title'], "<br>";
 }
 echo "<br> <br>";
 
