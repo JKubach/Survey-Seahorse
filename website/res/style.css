@@ -19,6 +19,13 @@ html {
     font-family: 'Raleway', sans-serif;
     font-size: 200%;
 }
+a.link {
+    color: gold;
+    font-weight: bold;
+}
+a.link:visited{
+    color:white;
+}
 .seahorse_pic {
     display: block;
     margin-left: auto;
