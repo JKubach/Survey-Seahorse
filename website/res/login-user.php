@@ -1,7 +1,7 @@
 <?php
 
+include_once 'session.php';
 if (isset($_POST['submit'])) {
-    include_once 'session.php';
     include '../config.php';
 
     $username = mysqli_real_escape_string($connect, $_POST['username']);

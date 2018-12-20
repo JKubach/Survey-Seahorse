@@ -1,9 +1,4 @@
 <?php
-if(!isset($_SESSION['uid'])){
-    header("location: login.php?user=notloggedin");
-    exit; 
-}
-
 include_once 'res/session.php';
 include_once 'config.php';
 include 'res/navbar.php';
