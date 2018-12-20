@@ -16,19 +16,23 @@ $luckyUrl = "takesurvey.php?sid=" . $feelinLucky['survey_id'];
 
 <style>
 .navbox{
+    width: 65em;
+    display: flex;
     border-radius: 25px;
-    margin: 0;
+    margin: 0 auto;
     padding: 10px;
     background-color: #40e0d0;
 }
 
 .nav {
+    margin: 0 auto;
     display: inline;
     overflow: hidden;
     font-family: Arial;
 }
 
 .nav a {
+    margin:0 auto;
     border-radius: 25px;
     float: left;
     font-size: 16px;
