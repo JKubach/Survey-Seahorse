@@ -187,7 +187,7 @@ form a{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-30%);
     background: #9dc3ee; 
     padding: 20px;
 }
