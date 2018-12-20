@@ -62,6 +62,16 @@ a.off:hover {
     padding: 20px;
 }
 
+/*password reset page*/
+.pass-reset {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: white;
+    padding: 20px;
+}
+
 form h2 {
     color: rgb(3,83,136);
     text-align: center;
