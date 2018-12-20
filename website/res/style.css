@@ -52,6 +52,24 @@ a.off:hover {
     color: white;
 }
 
+/*Create Survey Page*/
+form.create-survey-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-35%);
+}
+
+input.radio {
+    height: 25px;
+    width: 25px;
+}
+
+p.create {
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+}
+
 /*sign in page*/
 .signin-form {
     position: absolute;
