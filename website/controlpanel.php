@@ -41,5 +41,7 @@ if (!isset($_SESSION['admin'])) {
         <button type='submit' name='admin' > New Banner Message </button>
         <button type='submit' name='remove' > Remove Current Banner Message </button>
     </form>
+    
+    <a href="index.php"> Home </a> <br>
 </div>
-<a href="index.php"> Home </a> <br>
+
