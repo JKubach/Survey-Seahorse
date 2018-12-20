@@ -46,11 +46,11 @@ $luckyUrl = "takesurvey.php?sid=" . $feelinLucky['survey_id'];
 <div class=navbox>
     <div class= nav>
         <a href="index.php" target=""> Home </a>
-        <a href="directory.php" target=""> Surveys </a>
-        <a href="createsurvey.php" target=""> Create a Survey </a>
-        <a href="profile.php" target=""> <?php echo $profile; ?> </a>
-        <a href="<?php echo $luckyUrl?>" target=""> Feeling Lucky? </a>
+        <a href="directory.php" target=""> Survey Directory </a>
         <a href="findsurvey.php" target=""> Search for a Survey</a>
+        <a href="createsurvey.php" target=""> Create a Survey </a>
+        <a href="<?php echo $luckyUrl?>" target=""> Feeling Lucky? </a>
+        <a href="profile.php" target=""> <?php echo $profile; ?> </a>
     </div>
     <br><br>
 </div>
