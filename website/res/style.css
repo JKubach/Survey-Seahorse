@@ -19,6 +19,13 @@ html {
     font-family: 'Raleway', sans-serif;
     font-size: 200%;
 }
+a.link {
+    color: gold;
+    font-weight: bold;
+}
+a.link:visited{
+    color:white;
+}
 .seahorse_pic {
     display: block;
     margin-left: auto;
@@ -180,7 +187,7 @@ form a{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-30%);
     background: #9dc3ee; 
     padding: 20px;
 }
