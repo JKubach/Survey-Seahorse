@@ -50,6 +50,7 @@ $luckyUrl = "takesurvey.php?sid=" . $feelinLucky['survey_id'];
         <a href="createsurvey.php" target=""> Create a Survey </a>
         <a href="profile.php" target=""> <?php echo $profile; ?> </a>
         <a href="<?php echo $luckyUrl?>" target=""> Feeling Lucky? </a>
+        <a href="findsurvey.php" target=""> Search for a Survey</a>
     </div>
     <br><br>
 </div>
