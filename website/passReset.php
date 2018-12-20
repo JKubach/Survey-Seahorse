@@ -1,5 +1,5 @@
 <?php 
-session_start();
+include_once 'res/session.php';
 if(!empty($_GET)){
     $_SESSION['login-sid'] = $_GET['sid'];
 }

@@ -1,10 +1,6 @@
 <?php
-ini_set('display_errors', 'On');
-error_reporting(E_ALL | E_STRICT);
-
-session_start();
-
 if (isset($_POST['delete-survey'])) {
+    include_once 'session.php';
     include_once '../config.php';
 
     $code = mysqli_real_escape_string($connect, $_POST['survey-code']);

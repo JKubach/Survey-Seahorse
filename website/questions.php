@@ -1,6 +1,6 @@
 <html>
 <?php
-session_start();
+include_once 'res/session.php';
 include 'res/navbar.php';
 
 echo '<link rel="stylesheet" href="res/style.css">';

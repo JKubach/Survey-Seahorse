@@ -1,10 +1,7 @@
 <?php
-session_start();
-
-ini_set('display_errors', 'On');
-error_reporting(E_ALL | E_STRICT);
-
+include_once 'res/config.php';
 include_once 'config.php';
+
 if (!isset($_SESSION['admin'])) {
     header("Location: res/nope.php");
     exit();

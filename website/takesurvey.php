@@ -1,16 +1,10 @@
 <?php
-session_start();
 if(!isset($_SESSION['uid'])){
     header("location: login.php?user=notloggedin");
     exit; 
 }
 
-ini_set('display_errors', 'On');
-error_reporting(E_ALL | E_STRICT);
-
-ini_set('session.cache_limiter','public');
-session_cache_limiter(false);
-
+include_once 'res/session.php';
 include_once 'config.php';
 include 'res/navbar.php';
 
@@ -105,7 +99,7 @@ if (empty($code)) {
                     </select> ";
                 echo "<p> <span id='demo'</span> </p>";
             }
-            echo "<button name ='numeric' type = 'submit' value = 'Submit'/>";
+            echo "<input type='submit' name ='numeric' type = 'submit' value = 'Submit'/>";
         } elseif ($type == 49) {
             for($counter = 0; $counter < $number_questions; $counter++) {
                 $sql = "SELECT question_content FROM question WHERE survey_id=$sid and question_number=$counter+1;";
@@ -118,7 +112,7 @@ if (empty($code)) {
                     </select> ";
                 echo "<p> <span id='demo'</span> </p>";
             }
-            echo "<button name ='bool' type = 'submit' value = 'Submit'/>";
+            echo "<intput type='submit' name ='bool' type = 'submit' value = 'Submit'/>";
         } elseif ($type == 50) {
             for($counter = 0; $counter < $number_questions; $counter++) {
                 $sql = "SELECT question_content FROM question WHERE survey_id=$sid and question_number=$counter+1;";
@@ -130,7 +124,7 @@ if (empty($code)) {
                     </form> ";
                 echo "<p> <span id='demo'</span> </p>";
             }
-            echo "<button name ='text' type = 'submit' value = 'Submit'/>";
+            echo "<input type='submit' name ='text' type = 'submit' value = 'Submit'/>";
         }
         echo "</form>";
     }

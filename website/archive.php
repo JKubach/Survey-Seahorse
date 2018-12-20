@@ -1,8 +1,6 @@
 <html>
 <?php
- session_start();
-ini_set('display_errors', 'On');
-error_reporting(E_ALL | E_STRICT);
+include_once 'res/session.php';
 include_once 'config.php';
 include 'res/navbar.php';
 

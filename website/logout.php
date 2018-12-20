@@ -1,5 +1,5 @@
 <?php
-session_start();
+include_once 'res/session.php';
 unset($_SESSION["uid"]);
 unset($_SESSION["email"]);
 unset($_SESSION["username"]);

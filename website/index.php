@@ -1,7 +1,5 @@
 <?php
-ini_set('display_errors', 'On');
-error_reporting(E_ALL | E_STRICT);
-session_start();
+include_once 'res/session.php';
 include_once 'config.php';
 $sql = "SELECT question_content FROM question ORDER BY RAND() LIMIT 1;";
 $result = mysqli_query($connect, $sql) or die(mysqli_error($connect));

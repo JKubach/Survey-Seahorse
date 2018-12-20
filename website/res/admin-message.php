@@ -1,7 +1,5 @@
 <?php
-session_start();
-ini_set('display_errors', 'On');
-error_reporting(E_ALL | E_STRICT);
+include_once 'session.php';
 
 if (!empty($_POST['message'])) {
     $uid = $_SESSION['uid'];

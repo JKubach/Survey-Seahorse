@@ -1,9 +1,6 @@
 <?php
-session_start();
-ini_set('display_errors', 'On');
-error_reporting(E_ALL | E_STRICT);
-
 if(isset($_POST['reset'])){
+    include_once 'session.php';
     include '../config.php';
 
     $email = mysqli_real_escape_string($connect, $_POST['email']);

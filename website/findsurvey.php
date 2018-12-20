@@ -1,4 +1,5 @@
-<?php session_start();
+<?php 
+include_once 'res/session.php';
 include_once 'config.php';
 include 'res/navbar.php';
 $sql = "SELECT access_code FROM survey ORDER BY RAND() LIMIT 1;";

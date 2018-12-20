@@ -1,6 +1,7 @@
-<?php include 'res/navbar.php';
+<?php 
+include_once 'res/session.php';
+include 'res/navbar.php';
 
-session_start();
 if(!isset($_SESSION['uid'])){
     header("location: login.php?user=notloggedin");
     exit;

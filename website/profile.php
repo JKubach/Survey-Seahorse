@@ -1,6 +1,6 @@
 <html>
 <?php
-session_start();
+include_once 'res/session.php';
 include_once 'config.php';
 if($_SESSION['username'] == null)
         header("Location: login.php");

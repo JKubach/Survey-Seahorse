@@ -1,5 +1,5 @@
 <?php
-session_start();
+include_once 'res/session.php';
 
 $sid = $_SESSION['sid'];
 $code = $_SESSION['code'];
