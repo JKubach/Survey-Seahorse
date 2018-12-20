@@ -10,6 +10,7 @@ if (isset($_POST['delete-survey'])) {
     } else {
         echo "Survey ", $code, " deleted ";
         echo "<a href = '../controlpanel.php'> Control Panel </a>";
+        echo "<link rel='stylesheet' href='res/style.css'>"
         $sql ="SELECT * FROM survey WHERE access_code='$code';";
         $result = mysqli_query($connect, $sql);
         $row = mysqli_fetch_assoc($result);
