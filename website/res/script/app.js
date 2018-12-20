@@ -47,7 +47,7 @@ $(document).ready(function(){
                 options: {
                     title: {
                         display: true,
-                        text: 'Overall Distribution Of Answers for Question' + window.location.search.substr(1)
+                        text: 'Overall Distribution Of Answers'
                     }
                 }
             });
