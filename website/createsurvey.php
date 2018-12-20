@@ -14,10 +14,11 @@ if(!isset($_SESSION['uid'])){
 ?>
 
 <html>
+    <link rel="stylesheet" href="res/style.css">
 <!-- <link rel="stylesheet" href="res/style.css"> -->
-<h2> Create A New Survey </h2>
-<form class="create-survey-form" action="res/new-survey.php" method="POST">
 
+<form class="create-survey-form" action="res/new-survey.php" method="POST">
+<h2> Create A New Survey </h2>
 <p> Title & Description </p> 
 <input type="text" name="title" placeholder="My Amazing Survey"> <br>
 <input type="text" name="description" placeholder="This is a great survey"> <br>
