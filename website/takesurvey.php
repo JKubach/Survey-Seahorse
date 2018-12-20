@@ -56,7 +56,7 @@ if (empty($code)) {
             $num_rows = mysqli_num_rows($result);
             if ($num_rows > 0) {
                 $_SESSION['taken'] = 1;
-        echo "<h3 class="warning"> NOTICE: Survey already taken. Your answers will not be counted. </h3>";
+        echo "<h3> NOTICE: Survey already taken. Your answers will not be counted. </h3>";
             } else {
                 $_SESSION['taken'] = 0;
 
@@ -65,7 +65,7 @@ if (empty($code)) {
 
      if ($expire_date < date("Y-m-d")) {
         $_SESSION['expired'] = 1;
-        echo "<h3 class="warning"> NOTICE: This survey is expired. Your answers will not be counted. </h3>";
+        echo "<h3> NOTICE: This survey is expired. Your answers will not be counted. </h3>";
      } else {
         $_SESSION['expired'] = 0;
      }
