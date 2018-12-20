@@ -107,7 +107,7 @@ if (empty($code)) {
                     </select> ";
                 echo "<p> <span id='demo'</span> </p>";
             }
-            echo "<intput type='submit' name ='bool' type = 'submit' value = 'Submit'/>";
+            echo "<input type='submit' name ='bool' type = 'submit' value = 'Submit'/>";
         } elseif ($type == 50) {
             for($counter = 0; $counter < $number_questions; $counter++) {
                 $sql = "SELECT question_content FROM question WHERE survey_id=$sid and question_number=$counter+1;";
