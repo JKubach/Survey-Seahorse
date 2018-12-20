@@ -37,14 +37,14 @@ if (isset($message)) {
 </div>
 
 <div class="index-grid-panel">
-    <a href="login.php">Login</a>
-    <a href="signup.php">Register</a>
+    <a href="login.php">Login</a> <br>
+    <a href="signup.php">Register</a> <br>
     <!--<a href="profile.php"> Profile </a> <br>
     <a href="createsurvey.php"> Create Survey </a> <br>-->
-    <a href="findsurvey.php">Find a Survey</a>
-    <a href="directory.php">Survey Directory</a>
-    <a href="archive.php">Survey Archive</a>
-    <a href="about.php">About</a>
+    <a href="findsurvey.php">Find a Survey</a> <br>
+    <a href="directory.php">Survey Directory</a> <br>
+    <a href="archive.php">Survey Archive</a> <br>
+    <a href="about.php">About</a> <br>
 
 <?php 
 if (isset($_SESSION['uid'])) {
