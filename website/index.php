@@ -37,7 +37,9 @@ if (isset($message)) {
 </div>
 
 <div class="index-grid-panel">
-    <a href="login.php">Login</a> <br>
+    <?php if(!isset($_SESSION['uid']))
+        echo "<a href='login.php'> Login </a> <br>";
+    ?>
     <a href="signup.php">Register</a> <br>
     <!--<a href="profile.php"> Profile </a> <br>
     <a href="createsurvey.php"> Create Survey </a> <br>-->
