@@ -25,7 +25,7 @@ if(!isset($_SESSION['uid'])){
   <input type="text" name="description" placeholder="This is a great survey"> <br>
   
   <p class="create"> Answer Type: </p>
-  Numeric (1 - 10)<input type="radio" class="radio" checked="checked"  name="type" value="00"><br>
+  Numeric (1 - 10)<input type="radio" class="radio" checked="checked"  name="type" value="00">
   Yes / No<input type="radio" class="radio" name="type" value="01"><br>
   <!-- <input type="radio" name="type" value="10"> Text <br> -->
   <!-- <input type="radio" name="type" value="11"> Custom <br> -->
@@ -39,7 +39,7 @@ if(!isset($_SESSION['uid'])){
    echo "<input type='date' value = '$next_week' name='expire'> <br>";
   ?>
   <p class="create"> Can a user take this survey more than once? </p>
-  Yes<input type="radio" class="radio" name="once" value="0" checked><br>
+  Yes<input type="radio" class="radio" name="once" value="0" checked>
   No<input type="radio" class="radio" name="once" value="1"><br>
   
   <button type="submit" name="submit">Create Survey</button>
