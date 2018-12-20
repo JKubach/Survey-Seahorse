@@ -11,7 +11,7 @@ $qr = 'res/qrgen.php?sid=' . $sid;
 <?php 
 echo $title, " has been created. ";
 echo "Use access code ", $code;
-echo "<a href='$qr'> QR Code </a>";
+echo "<a href='$qr' class='link'> QR Code </a>";
 unset($_SESSION['sid']);
 unset($_SESSION['code']);
 unset($_SESSION['title']);
