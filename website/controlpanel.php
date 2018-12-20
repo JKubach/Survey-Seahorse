@@ -1,5 +1,5 @@
 <?php
-include_once 'res/config.php';
+include_once 'res/session.php';
 include_once 'config.php';
 
 if (!isset($_SESSION['admin'])) {

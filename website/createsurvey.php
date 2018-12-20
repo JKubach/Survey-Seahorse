@@ -2,8 +2,13 @@
 include_once 'res/session.php';
 include 'res/navbar.php';
 
+$block = $_SESSION['blocked'];
+
 if(!isset($_SESSION['uid'])){
     header("location: login.php?user=notloggedin");
+    exit;
+} elseif ($block == 49 || $block == 50 || $block == 51) {
+    header("location: res/nope.php");
     exit;
 }
 ?>

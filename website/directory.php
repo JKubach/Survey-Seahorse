@@ -7,6 +7,12 @@ include 'res/navbar.php';
 echo '<link rel="stylesheet" href="res/style.css">';
 echo  '<div class="survey-directory">';
 
+$block = $_SESSION['blocked'];
+if ($block == 51) {
+    header("Location: res/nope.php");
+    exit();
+}
+
 $date = date("Y-m-d");
 $sql = "SELECT COUNT(*) FROM survey WHERE expiration_date >= '$date';";
 $result = mysqli_query($connect, $sql);
@@ -44,25 +50,25 @@ while ($row = mysqli_fetch_assoc($result)) {
 $range = 3;
 
 if ($page > 1) {
-   echo " <a href='{$_SERVER['PHP_SELF']}?page=1'><<</a> ";
-   $prevpage = $page - 1;
-   echo " <a href='{$_SERVER['PHP_SELF']}?page=$prevpage'><</a> ";
+    echo " <a href='{$_SERVER['PHP_SELF']}?page=1'><<</a> ";
+    $prevpage = $page - 1;
+    echo " <a href='{$_SERVER['PHP_SELF']}?page=$prevpage'><</a> ";
 }
 
 for ($x = ($page - $range); $x < (($page + $range) + 1); $x++) {
-   if (($x > 0) && ($x <= $total_pages)) {
-      if ($x == $page) {
-         echo " [<b>$x</b>] ";
-      } else {
-         echo " <a href='{$_SERVER['PHP_SELF']}?page=$x'>$x</a> ";
-      }
-   }
+    if (($x > 0) && ($x <= $total_pages)) {
+        if ($x == $page) {
+            echo " [<b>$x</b>] ";
+        } else {
+            echo " <a href='{$_SERVER['PHP_SELF']}?page=$x'>$x</a> ";
+        }
+    }
 }
 
 if ($page != $total_pages) {
-   $nextpage = $page + 1;
-   echo " <a href='{$_SERVER['PHP_SELF']}?page=$nextpage'>></a> ";
-   echo " <a href='{$_SERVER['PHP_SELF']}?page=$total_pages'>>></a> ";
+    $nextpage = $page + 1;
+    echo " <a href='{$_SERVER['PHP_SELF']}?page=$nextpage'>></a> ";
+    echo " <a href='{$_SERVER['PHP_SELF']}?page=$total_pages'>>></a> ";
 }
 
 exit();

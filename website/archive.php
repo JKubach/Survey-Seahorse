@@ -7,6 +7,12 @@ include 'res/navbar.php';
 echo '<link rel="stylesheet" href="res/style.css">';
 echo  '<div class="survey-directory">';
 
+$block = $_SESSION['blocked'];
+if ($block == 51) {
+    header("Location: res/nope.php");
+    exit();
+}
+
 $date = date("Y-m-d");
 $sql = "SELECT COUNT(*) FROM survey WHERE expiration_date < '$date';";
 $result = mysqli_query($connect, $sql);
