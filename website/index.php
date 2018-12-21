@@ -35,6 +35,7 @@ if (isset($message)) {
     <img src="res/img/seahorse.png" class="seahorse_pic" size="250">
     <h3> Welcome to our newest user: <?php echo $newUser['username']; ?> </h3>
 </div>
+<br><br><br>
 
 <div class="index-grid-panel">
     <?php if(!isset($_SESSION['uid']))
